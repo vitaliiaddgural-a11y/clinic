@@ -1,10 +1,69 @@
 /* Estetic Derm — overrides on top of the Dermato Webflow template */
 
-/* Template fonts have no Cyrillic glyphs — use Cyrillic-capable equivalents */
-:root {
-  --_typography---font-family--heading: "Lora", Georgia, serif;
-  --_typography---font-family--body: "Manrope", Arial, sans-serif;
+/* Template fonts have no Cyrillic glyphs — Unbounded (headings) + Onest (body).
+   Unbounded is much wider than the template serif, so heading sizes are scaled down.
+   The template re-declares these variables on `body` inside its ≤991/767/479 media
+   queries, so they are set on both :root and body, and sizes are re-set per breakpoint. */
+:root, body {
+  --_typography---font-family--heading: "Unbounded", "Onest", Arial, sans-serif;
+  --_typography---font-family--body: "Onest", Arial, sans-serif;
+  --_typography---h1--line-height: 1.08em;
+  --_typography---h1--font-weight: 500;
+  --_typography---h2--line-height: 1.12em;
+  --_typography---h2--font-weight: 500;
+  --_typography---h3--line-height: 1.15em;
+  --_typography---h3--font-weight: 500;
+  --_typography---h4--line-height: 1.25em;
+  --_typography---h4--font-weight: 500;
+  --_typography---h5--line-height: 1.25em;
+  --_typography---h5--font-weight: 500;
+  --_typography---h6--line-height: 1.25em;
+  --_typography---h6--font-weight: 500;
 }
+@media screen and (max-width: 991px) {
+  body {
+    --_typography---h1--h1: 3.5rem; --_typography---h2--h2: 2.75rem; --_typography---h3--h3: 2.5rem;
+    --_typography---h4--h4: 1.75rem; --_typography---h5--h5: 1.375rem; --_typography---h6--h6: 1.125rem;
+    --_typography---heading-big--heading-big: 7rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+    --_typography---h1--h1: 3rem; --_typography---h2--h2: 2.375rem; --_typography---h3--h3: 2.125rem;
+    --_typography---h4--h4: 1.625rem; --_typography---h5--h5: 1.25rem; --_typography---h6--h6: 1.0625rem;
+    --_typography---heading-big--heading-big: 5.5rem;
+  }
+}
+@media screen and (max-width: 479px) {
+  body {
+    --_typography---h1--h1: 2.125rem; --_typography---h2--h2: 1.875rem; --_typography---h3--h3: 1.625rem;
+    --_typography---h4--h4: 1.375rem; --_typography---h5--h5: 1.125rem; --_typography---h6--h6: 1rem;
+    --_typography---heading-big--heading-big: 4.25rem;
+  }
+}
+:root {
+  --_typography---h1--h1: 4.25rem;
+  --_typography---h1--line-height: 1.08em;
+  --_typography---h1--font-weight: 500;
+  --_typography---h2--h2: 3.25rem;
+  --_typography---h2--line-height: 1.12em;
+  --_typography---h2--font-weight: 500;
+  --_typography---h3--h3: 2.75rem;
+  --_typography---h3--line-height: 1.15em;
+  --_typography---h3--font-weight: 500;
+  --_typography---h4--h4: 2.125rem;
+  --_typography---h4--line-height: 1.25em;
+  --_typography---h4--font-weight: 500;
+  --_typography---h5--h5: 1.375rem;
+  --_typography---h5--line-height: 1.25em;
+  --_typography---h5--font-weight: 500;
+  --_typography---h6--h6: 1.125rem;
+  --_typography---h6--line-height: 1.25em;
+  --_typography---h6--font-weight: 500;
+  --_typography---heading-big--heading-big: 8rem;
+}
+h1, h2, h3, h4, h5, h6, .about-title { letter-spacing: -0.03em; }
+.ed-accent { color: var(--color--bronze); }
 html { scroll-behavior: smooth; }
 section[id] { scroll-margin-top: 110px; }
 
