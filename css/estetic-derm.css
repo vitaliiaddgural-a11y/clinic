@@ -63,7 +63,27 @@
   --_typography---heading-big--heading-big: 8rem;
 }
 h1, h2, h3, h4, h5, h6, .about-title { letter-spacing: -0.03em; }
-.ed-accent { color: var(--color--bronze); }
+
+/* Accent palette from the Estetic Derm logo.
+   The template's "bronze" accent is remapped to logo teal (darkened for contrast);
+   bright logo aqua and logo red are used for small decorative details only. */
+:root {
+  --ed-aqua: #00c8d0;        /* logo turquoise */
+  --ed-teal-dark: #085050;   /* logo dark teal (subtitle) */
+  --ed-red: #f80000;         /* logo red line */
+  --ed-accent-text: #0a959c; /* large headline accents, 3.4:1 on cream */
+  --color--bronze: #077a80;  /* buttons, badges, small accents, 5.1:1 with white */
+  --color--bronze-6: #077a800f;
+  --color--bronze-10: #077a801a;
+  --color--bronze-50: #077a8080;
+  --color--bronze-60: #077a8099;
+  --color--bronze-80: #077a80cc;
+}
+.ed-accent { color: var(--ed-accent-text); }
+.pre-dot { background-color: var(--ed-red); }
+.button-icon-primary.w-variant-004d8508-565d-37f9-39ad-0523bc228eff:hover { background-color: var(--ed-teal-dark); }
+.ed-divider { background-color: var(--ed-aqua); border-color: var(--ed-aqua); }
+::selection { background: var(--ed-aqua); color: #fff; }
 html { scroll-behavior: smooth; }
 section[id] { scroll-margin-top: 110px; }
 
